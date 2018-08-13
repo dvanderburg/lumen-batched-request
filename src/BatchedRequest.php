@@ -74,6 +74,11 @@ class BatchedRequest {
 		return $this->responses;
 	}
 	
+	/**
+	 * Handles an individual batched request
+	 * @param  array $batchedRequest Single request from the "batch" array
+	 * @return array                 Response for the request
+	 */
 	private function handleBatchedRequest($batchedRequest) {
 
 		$method = isset($batchedRequest['method']) ? $batchedRequest['method'] : "GET";
