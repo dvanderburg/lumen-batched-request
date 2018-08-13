@@ -1,0 +1,25 @@
+{
+    "name": "dvanderburg/lumen-batched-request",
+    "description": "Service provider for batched requests in Lumen framework (Laravel PHP).",
+    "homepage": "https://github.com/dvanderburg/lumen-batched-request",
+    "keywords": ["lumen","laravel","batch"],
+    "type": "library",
+    "autoload": {
+	    "psr-4": {
+		    "Dvanderburg\\BatchedRequest\\": "src"
+		}
+     },
+    "require": {
+        "php": ">=7.0",
+        "laravel/lumen-framework": "5.6.*",
+        "flow/jsonpath": "^0.4.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dave Vanderburg",
+            "email": "dvanderburg@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
