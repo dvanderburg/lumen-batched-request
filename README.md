@@ -95,7 +95,7 @@ POST /batch HTTP/1.1
 Content-Type: application/json
 batch: [
 	{ "method": "GET", "name": "get-user-books", "relative_url": "/user_books/?username=larry" },
-	{ "method": "GET", "relative_url": "/book/?book_ids={result=get-user-books:$.book_id.*}" },
+	{ "method": "GET", "relative_url": "/book/?book_ids={result=get-user-books:$..book_id}" },
 ```
 
 In the example above, the first request in the batch is named get-user-books and the second request in the batch uses JSONP syntax to extract all the book_ids from the first request in order to know what books to retrieve.

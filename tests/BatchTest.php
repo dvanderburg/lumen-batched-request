@@ -3,7 +3,6 @@
 namespace Dvanderburg\BatchedRequest\Test;
 
 use Dvanderburg\BatchedRequest\BatchedRequest;
-use Dvanderburg\BatchedRequest\BatchedRequestServiceProvider;
 use Dvanderburg\BatchedRequest\Test\TestCase;
 
 class BatchTest extends TestCase {

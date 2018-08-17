@@ -31,6 +31,28 @@ abstract class TestCase extends BaseTestCase {
 			return [ 'username' => $username ];
 		});
 
+		// mock get request for retrieving a collection of "books" owned by a user
+		$app->router->get('user_books', function() {
+			return [
+				[ 'book_id' => 1234 ],
+				[ 'book_id' => 5678 ],
+			];
+		});
+
+		// mock get request for retrieving multiple books
+		$app->router->get('book', function(Request $request) {
+
+			$bookIDs = $request->input('book_ids', "[]");
+			$bookIDs = json_decode($bookIDs);
+
+			$resp = [];
+			foreach ($bookIDs as $index => $id) {
+				$resp[] = [ 'id' => $id, 'name' => "Book #".($index+1) ];
+			}
+
+			return $resp;
+		});
+
 		return $app;
 	}
 
