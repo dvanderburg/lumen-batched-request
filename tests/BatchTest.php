@@ -16,7 +16,7 @@ class BatchTest extends TestCase {
 	 *
 	 * @return void
 	 */
-	public function testExample() {
+	public function testBatch() {
 
 		$batch = [
 			[
