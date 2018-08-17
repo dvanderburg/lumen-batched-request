@@ -9,6 +9,11 @@
 		    "Dvanderburg\\BatchedRequest\\": "src"
 		}
      },
+    "autoload-dev": {
+        "psr-4": {
+            "Dvanderburg\\BatchedRequest\\Test\\": "tests"
+        }
+    },
     "require": {
         "php": ">=7.0",
         "laravel/lumen-framework": "5.6.*",
@@ -21,5 +26,8 @@
             "email": "dvanderburg@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    }
 }
