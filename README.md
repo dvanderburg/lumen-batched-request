@@ -1,4 +1,9 @@
 # Lumen Batched Requests
+[![Latest Stable Version](https://poser.pugx.org/dvanderburg/lumen-batched-request/v/stable)](https://packagist.org/packages/dvanderburg/lumen-batched-request)
+[![Total Downloads](https://poser.pugx.org/dvanderburg/lumen-batched-request/downloads)](https://packagist.org/packages/dvanderburg/lumen-batched-request)
+[![Latest Unstable Version](https://poser.pugx.org/dvanderburg/lumen-batched-request/v/unstable)](https://packagist.org/packages/dvanderburg/lumen-batched-request)
+[![License](https://poser.pugx.org/dvanderburg/lumen-batched-request/license)](https://packagist.org/packages/dvanderburg/lumen-batched-request)
+
 Lumen service provider to perform batched requests. Usage and implementation roughly based on <a href="https://developers.facebook.com/docs/graph-api/making-multiple-requests">making batch requests</a> with Facebook's Graph API.
 
 Batching requests allows you to send multiple requests at once, allowing you to perform multiple operations in a single HTTP request. Each request in the batch is processed in sequence unless dependencies are specified.
