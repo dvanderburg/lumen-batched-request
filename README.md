@@ -1,4 +1,5 @@
 # Lumen Batched Requests
+[![Build Status](https://travis-ci.org/dvanderburg/lumen-batched-request.svg?branch=master)](https://travis-ci.org/dvanderburg/lumen-batched-request)
 [![Latest Stable Version](https://poser.pugx.org/dvanderburg/lumen-batched-request/v/stable)](https://packagist.org/packages/dvanderburg/lumen-batched-request)
 [![Total Downloads](https://poser.pugx.org/dvanderburg/lumen-batched-request/downloads)](https://packagist.org/packages/dvanderburg/lumen-batched-request)
 [![Latest Unstable Version](https://poser.pugx.org/dvanderburg/lumen-batched-request/v/unstable)](https://packagist.org/packages/dvanderburg/lumen-batched-request)
