@@ -27,7 +27,7 @@ class DependencyTest extends TestCase {
 			],
 			[
 				'method' => 'GET',
-				'relative_url' => '/book/?book_ids={result=get-user-books:$..book_id}',
+				'relative_url' => '/book/?book_ids={result=get-user-books:$.book_id}',
 			],
 		];
 

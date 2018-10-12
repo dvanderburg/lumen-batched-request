@@ -36,14 +36,15 @@ abstract class TestCase extends BaseTestCase {
 			return [
 				[ 'book_id' => 1234 ],
 				[ 'book_id' => 5678 ],
+				[ 'book_id' => 9012 ],
 			];
 		});
 
 		// mock get request for retrieving multiple books
 		$app->router->get('book', function(Request $request) {
 
-			$bookIDs = $request->input('book_ids', "[]");
-			$bookIDs = json_decode($bookIDs);
+			$bookIDs = $request->input('book_ids');
+			$bookIDs = explode(',', $bookIDs);
 
 			$resp = [];
 			foreach ($bookIDs as $index => $id) {

@@ -132,7 +132,7 @@ class BatchedRequest {
 			$result = $jsonPath->find($urlToken['json_path']);
 			
 			// parse the tokens in the relative url using the result of the json path expression
-			$batchedRequest['relative_url'] = str_replace($urlToken['url_token'], json_encode($result), $batchedRequest['relative_url']);
+			$batchedRequest['relative_url'] = str_replace($urlToken['url_token'], implode(',', $result->data()), $batchedRequest['relative_url']);
 							
 		}
 		
