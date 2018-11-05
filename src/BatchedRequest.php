@@ -100,6 +100,11 @@ class BatchedRequest {
 		$response = array();
 		$response['code'] = $subRequestResponse->getStatusCode();
 		$response['body'] = $subRequestResponse->getContent();
+
+		// json responses should remain as arrays until the final response from the ENTIRE batch is encoded
+		if ($subRequestResponse->headers->get('Content-Type') === 'application/json') {
+			$response['body'] = json_decode($response['body'], true);
+		}
 		
 		return $response;
 		
@@ -126,9 +131,7 @@ class BatchedRequest {
 				throw new HttpException(400, "The request to '".$batchedRequest['relative_url']."' could not be completed because its dependant request '".$urlToken['dependancy']."' failed.");
 			}
 			
-			// json decode the dependacy's response and apply the json path
-			$bodyData = json_decode($dependancyResponse['body'], true);
-			$jsonPath = new JSONPath($bodyData);
+			$jsonPath = new JSONPath($dependancyResponse['body']);
 			$result = $jsonPath->find($urlToken['json_path']);
 			
 			// parse the tokens in the relative url using the result of the json path expression

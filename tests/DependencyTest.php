@@ -49,8 +49,8 @@ class DependencyTest extends TestCase {
 		$this->assertEquals(200, $userBookResponse['code'], "Prerequisite request failed when testing a batch with dependencies.");
 		$this->assertEquals(200, $bookResponse['code'], "Dependent request failed when testing a batch with dependencies.");
 
-		$userBookResposneBody = json_decode($userBookResponse['body'], true);
-		$bookResponseBody = json_decode($bookResponse['body'], true);
+		$userBookResposneBody = $userBookResponse['body'];
+		$bookResponseBody = $bookResponse['body'];
 
 		// number of booked returned by the 'get-user-books' request should match the number books returned in the dependent request
 		$this->assertCount(count($bookResponseBody), $bookResponseBody, "Number of entities returned in dependent request did not match expected result.");
